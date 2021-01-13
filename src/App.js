@@ -19,11 +19,8 @@ const App = () => {
             onClick={handleClick}
           ></div>
         </header>
-
         <video className='video' src={explore} autoPlay muted loop></video>
-
         <div className='overlay'></div>
-
         <div className='text'>
           <h2>Never Stop</h2>
           <h3>Exploring the World</h3>
@@ -34,7 +31,6 @@ const App = () => {
           </p>
           <a href='#'>Explore</a>
         </div>
-
         <ul className='social'>
           <li>
             <a href='#'>
@@ -49,6 +45,15 @@ const App = () => {
           <li>
             <a href=''>
               <FaInstagram />
+            </a>
+          </li>
+          <li className='image-rights'>
+            <a
+              href='https://www.pexels.com/video/aerial-view-of-beautiful-resort-2169880/'
+              target='_blank'
+              rel='noreferrer'
+            >
+              Image by Tom Fisk on Pexels
             </a>
           </li>
         </ul>
