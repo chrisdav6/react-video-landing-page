@@ -1,20 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import explore from './img/explore.mp4';
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaTwitter,
-  FaBars,
-  FaTimes
-} from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 const App = () => {
+  const [active, setActive] = useState(false);
+
+  const handleClick = () => {
+    setActive(!active);
+  };
+
   return (
     <div className='app'>
-      <section className='showcase'>
+      <section className={`showcase ${active && 'active'}`}>
         <header>
           <h2 className='logo'>Travel</h2>
-          <div className='toggle'></div>
+          <div
+            className={`toggle ${active && 'active'}`}
+            onClick={handleClick}
+          ></div>
         </header>
 
         <video className='video' src={explore} autoPlay muted loop></video>
@@ -27,25 +30,31 @@ const App = () => {
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic,
             deserunt! Dolorum sed distinctio suscipit labore rem aut eligendi
-            aspernatur rerum?
+            aspernatur rerum.
           </p>
           <a href='#'>Explore</a>
         </div>
 
         <ul className='social'>
           <li>
-            <FaFacebookF />
+            <a href='#'>
+              <FaFacebookF />
+            </a>
           </li>
           <li>
-            <FaTwitter />
+            <a href='#'>
+              <FaTwitter />
+            </a>
           </li>
           <li>
-            <FaInstagram />
+            <a href=''>
+              <FaInstagram />
+            </a>
           </li>
         </ul>
       </section>
 
-      <div className='menu'>
+      <div className={`menu ${active && 'active'}`}>
         <ul>
           <li>
             <a href='#'>Home</a>
